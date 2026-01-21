@@ -18,14 +18,16 @@ function sortear () {
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:${sorteados}</label>`
     alterarStatusBotao();
 }
+
 function obterNumeroAleatorio (min, max) {
     //min = Math.ceil(min);  Não precisa.
     //max = Math.floor(max); Não precisa.
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 function alterarStatusBotao()
 {
-let botao = document.getElementById('btn-reiniciar');
+    let botao = document.getElementById('btn-reiniciar');
 if(botao.classList.contains('container__botao-desabilitado'))
     {
     botao.classList.remove('container__botao-desabilitado');
@@ -36,4 +38,13 @@ if(botao.classList.contains('container__botao-desabilitado'))
     botao.classList.remove('container__botao');
     botao.classList.add('container__botao-desabilitado');
     }
+}
+
+function reiniciar()
+{
+    document.getElementById('quantidade').value = '';
+    document.getElementById('de').value = '';
+    document.getElementById('ate').value = '';
+    document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
+    alterarStatusBotao();
 }
