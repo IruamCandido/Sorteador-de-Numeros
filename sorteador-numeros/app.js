@@ -2,7 +2,13 @@ function sortear () {
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
-
+    
+// teste de proteção de entrada de dados.
+    if(ate < de){
+        alert('Informe valores corretos');
+        reiniciar();
+    }
+// teste de proteção de entrada de dados.
     let sorteados = [];
     let numero;
    
